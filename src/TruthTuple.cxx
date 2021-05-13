@@ -1,7 +1,8 @@
 // Martin Duy Tat 13th May 2021
 
-// MCTruth
-#include "MCTruthTuple/TruthTuple.h"
+// MCTruthInfo
+#include "MCTruthInfo/TruthTuple.h"
+#include "KKpipi/FindMCInfo.h"
 // Gaudi
 #include "GaudiKernel/AlgFactory.h"
 #include "GaudiKernel/Bootstrap.h"
@@ -43,11 +44,11 @@ StatusCode TruthTuple::initialize() {
   MsgStream log(msgSvc(), name());
   log << MSG::INFO << "Initializing MC truth tuple" << endreq;
   StatusCode status;
-  NTuplePtr ntp(ntupleSvc(), "MCTRUTH/TruthTuple");
+  NTuplePtr ntp(ntupleSvc(), "MCTRUTHINFO/TruthTuple");
   if(ntp) {
     m_tuple = ntp;
   } else {
-    m_tuple = ntupleSvc()->book("MCTRUTH/TruthTuple", CLID_ColumnWiseTuple, "Tuple with generator level information");
+    m_tuple = ntupleSvc()->book("MCTRUTHINFO/TruthTuple", CLID_ColumnWiseTuple, "Tuple with generator level information");
     if(m_tuple) {
       status = m_tuple->addItem("Run", m_RunNumber);
       status = m_tuple->addItem("Event", m_EventNumber);

@@ -1,11 +1,11 @@
 // Martin Duy Tat 12th February 2021
 /**
- * MCTruth is a BOSS algorithm
+ * MCTruthInfo is a BOSS algorithm
  * It saves all the generator information from MC DST files
  */
 
-#ifndef MCTRUTH
-#define MCTRUTH
+#ifndef MCTRUTHINFO
+#define MCTRUTHINFO
 
 // Gaudi
 #include "GaudiKernel/AlgFactory.h"
@@ -14,16 +14,16 @@
 // STL
 #include<string>
 
-class MCTruth: public Algorithm {
+class MCTruthInfo: public Algorithm {
   public:
     /**
      * Default constructor for an algorithm where all necessary properties are declared
      */
-    MCTruth(const std::string& name, ISvcLocator* pSvcLocator);
+    MCTruthInfo(const std::string& name, ISvcLocator* pSvcLocator);
     /**
      * Trivial destructor
      */
-    ~MCTruth();
+    ~MCTruthInfo();
     /**
      * This function runs when algorithm is initialized
      */

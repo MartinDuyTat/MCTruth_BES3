@@ -1,7 +1,12 @@
-package MCTruth
+package MCTruthInfo
 author Martin Duy Tat <martin.tat@physics.ox.ac.uk>
 
-branches cmt src KKpipi share
+branches cmt src MCTruthInfo share
+
+use BesPolicy        BesPolicy-01-*
+use GaudiInterface   GaudiInterface-01-* External
+use KKpipi           00-00-01
+use McDecayModeSvc   McDecayModeSvc-* 
 
 apply_pattern component_library
-library KKpipi *.cxx  components/*.cxx
+library MCTruthInfo *.cxx  components/*.cxx

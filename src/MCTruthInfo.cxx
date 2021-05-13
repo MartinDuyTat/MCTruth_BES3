@@ -1,7 +1,7 @@
 // Martin Duy Tat 12th February 2021
 
-// MCTruth
-#include "MCTruth/MCTruth.h"
+// MCTruthInfo
+#include "MCTruthInfo/MCTruthInfo.h"
 #include "GaudiKernel/SmartIF.h"
 #include "GaudiKernel/MsgStream.h"
 #include "GaudiKernel/AlgFactory.h"
@@ -14,16 +14,16 @@
 // STL
 #include<string>
 
-MCTruth::MCTruth(const std::string& name, ISvcLocator* pSvcLocator): Algorithm(name, pSvcLocator) {
-  declareProperty("MCTruthTuple", m_recTruthTuple = true);
+MCTruthInfo::MCTruthInfo(const std::string& name, ISvcLocator* pSvcLocator): Algorithm(name, pSvcLocator) {
+  declareProperty("MCTruthInfoTuple", m_recTruthTuple = true);
 }
 
-MCTruth::~MCTruth() {
+MCTruthInfo::~MCTruthInfo() {
 }
 
-StatusCode MCTruth::initialize() {
+StatusCode MCTruthInfo::initialize() {
   MsgStream log(msgSvc(), name());
-  log << MSG::INFO << "Creating MCTruth Double Tag Algorithm" << endreq;
+  log << MSG::INFO << "Creating MCTruthInfo Double Tag Algorithm" << endreq;
   StatusCode sc;
   if(m_recTruthTuple) {
     sc = createSubAlgorithm("TruthTuple", "TruthTuple", m_TruthTuple);
@@ -34,7 +34,7 @@ StatusCode MCTruth::initialize() {
   }
 }
 
-StatusCode MCTruth::execute() {
+StatusCode MCTruthInfo::execute() {
   for(std::vector<Algorithm*>::const_iterator it = subAlgorithms()->begin(); it != subAlgorithms()->end(); it++) {
     StatusCode sc = (*it)->execute();
     if(sc.isFailure()) {
@@ -43,8 +43,8 @@ StatusCode MCTruth::execute() {
   }
 }
 
-StatusCode MCTruth::finalize() {
+StatusCode MCTruthInfo::finalize() {
   MsgStream log(msgSvc(), name());
-  log << MSG::INFO << "MCTruth Algorithm finalized" << endmsg;
+  log << MSG::INFO << "MCTruthInfo Algorithm finalized" << endmsg;
   return StatusCode::SUCCESS;
 }
