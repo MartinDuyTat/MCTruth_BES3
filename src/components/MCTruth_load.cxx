@@ -1,3 +1,3 @@
 #include "GaudiKernel/LoadFactoryEntries.h"
 
-LOAD_FACTORY_ENTRIES(MCTruth)
+LOAD_FACTORY_ENTRIES(MCTruthInfo)

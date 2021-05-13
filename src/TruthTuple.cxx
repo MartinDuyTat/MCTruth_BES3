@@ -2,7 +2,7 @@
 
 // MCTruthInfo
 #include "MCTruthInfo/TruthTuple.h"
-#include "KKpipi/FindMCInfo.h"
+#include "MCTruthInfo/FindMCInfo.h"
 // Gaudi
 #include "GaudiKernel/AlgFactory.h"
 #include "GaudiKernel/Bootstrap.h"
