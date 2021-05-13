@@ -56,6 +56,9 @@ StatusCode TruthTuple::initialize() {
 StatusCode TruthTuple::execute() {
   MsgStream log(msgSvc(), name());
   log << MSG::INFO << "Executing TruthTuple Algorithm" << endreq;
+  SmartDataPtr<Event::EventHeader> eventHeader(eventSvc(), "/Event/EventHeader");
+  m_RunNumber = eventHeader->runNumber();
+  m_EventNumber = eventHeader->eventNumber();
   StatusCode FillTupleStatus = FillTuple();
   if(FillTupleStatus != StatusCode::SUCCESS) {
     log << MSG::FATAL << "Assigning tuple info failed" << endreq;
