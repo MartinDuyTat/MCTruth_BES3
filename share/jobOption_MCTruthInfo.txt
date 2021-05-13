@@ -1,4 +1,4 @@
 #include "$MCDECAYMODESVCROOT/share/GetDecayMode.txt"
 #include "$EVENTWRITERROOT/share/jobOptions_EventWriter.txt"
-ApplicationMgr.DLLs += {"MCTruth"};
-ApplicationMgr.TopAlg += {"MCTruth"};
+ApplicationMgr.DLLs += {"MCTruthInfo"};
+ApplicationMgr.TopAlg += {"MCTruthInfo"};
