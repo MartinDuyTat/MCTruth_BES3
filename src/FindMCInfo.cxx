@@ -1,8 +1,8 @@
 // Martin Duy Tat 11th February 2021, based on code by Yu Zhang
 
 // KKpipi
-#include "KKpipi/FindMCInfo.h"
-#include "KKpipi/StripResonances.h"
+#include "MCTruthInfo/FindMCInfo.h"
+#include "MCTruthInfo/StripResonances.h"
 // Gaudi
 #include "GaudiKernel/Bootstrap.h"
 #include "GaudiKernel/IDataProviderSvc.h"
