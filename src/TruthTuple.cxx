@@ -17,6 +17,8 @@
 #include<vector>
 #include<string>
 
+DECLARE_COMPONENT(TruthTuple)
+
 TruthTuple::TruthTuple(const std::string &name, ISvcLocator *pSvcLocator): Algorithm(name, pSvcLocator) {
   declareProperty("dummy", m_dummy = 0);
 }
@@ -51,8 +53,8 @@ StatusCode TruthTuple::initialize() {
       log << MSG::ERROR << "Cannot book NTuple for MC generator level information" << endmsg;
       return StatusCode::FAILURE;
     }
-    return StatusCode::SUCCESS;
   }
+  return StatusCode::SUCCESS;
 }
 
 StatusCode TruthTuple::execute() {

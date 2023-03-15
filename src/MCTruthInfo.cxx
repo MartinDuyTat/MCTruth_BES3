@@ -14,6 +14,8 @@
 // STL
 #include<string>
 
+DECLARE_COMPONENT(MCTruthInfo)
+
 MCTruthInfo::MCTruthInfo(const std::string& name, ISvcLocator* pSvcLocator): Algorithm(name, pSvcLocator) {
   declareProperty("MCTruthInfoTuple", m_recTruthTuple = true);
 }
@@ -32,6 +34,7 @@ StatusCode MCTruthInfo::initialize() {
       return StatusCode::FAILURE;
     }
   }
+  return StatusCode::SUCCESS;
 }
 
 StatusCode MCTruthInfo::execute() {
@@ -41,6 +44,7 @@ StatusCode MCTruthInfo::execute() {
       return StatusCode::FAILURE;
     }
   }
+  return StatusCode::SUCCESS;
 }
 
 StatusCode MCTruthInfo::finalize() {
